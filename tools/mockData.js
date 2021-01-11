@@ -137,17 +137,17 @@ const locations = [
   , {id: 11, address: 'Plot No 871, Federal B Area Hussainabad Block 3', town: 'Gulberg Town', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
 ];
 const centres = [
-    {id: 1, name: 'The Clinic', typeId: 1, areaId: 1, locationId: 1}
-  , {id: 2, name: 'Noor Clinic', typeId: 1, areaId: 2, locationId: 2}
-  , {id: 3, name: 'Zubaida Machiyara Trust Clinic', typeId: 1, areaId: 1, locationId: 3}
-  , {id: 4, name: 'Poly Clinic', typeId: 1, areaId: 8, locationId: 4}
-  , {id: 5, name: 'Shahrukh clinic saddar', typeId: 1, areaId: 9, locationId: 5}
-  , {id: 6, name: 'ZMT Clinic Head Office', typeId: 1, areaId: 1, locationId: 6}
-  , {id: 7, name: 'Clinic5', typeId: 1, areaId: 4, locationId: 7}
-  , {id: 8, name: 'Fatima Clinic', typeId: 1, areaId: 10, locationId: 8}
-  , {id: 9, name: 'Dr.Aliya s Haqqani Clinic', typeId: 1, areaId: 7, locationId: 9}
-  , {id: 10, name: 'Maryam Clinic', typeId: 1, areaId: 11, locationId: 10}
-  , {id: 11, name: 'Fatima Clinic and Maternity Hospital', typeId: 2, areaId: 12, locationId: 11}
+    {id: 1, name: 'The Clinic', typeId: 1, areaId: 1, locationId: 142}
+  , {id: 2, name: 'Noor Clinic', typeId: 1, areaId: 85, locationId: 2}
+  , {id: 3, name: 'Zubaida Machiyara Trust Clinic', typeId: 1, areaId: 142, locationId: 3}
+  , {id: 4, name: 'Poly Clinic', typeId: 1, areaId: 149, locationId: 4}
+  , {id: 5, name: 'Shahrukh clinic saddar', typeId: 1, areaId: 83, locationId: 5}
+  , {id: 6, name: 'ZMT Clinic Head Office', typeId: 1, areaId: 142, locationId: 6}
+  , {id: 7, name: 'Clinic5', typeId: 1, areaId: 179, locationId: 7}
+  , {id: 8, name: 'Fatima Clinic', typeId: 1, areaId: 148, locationId: 8}
+  , {id: 9, name: 'Dr.Aliya s Haqqani Clinic', typeId: 1, areaId: 182, locationId: 9}
+  , {id: 10, name: 'Maryam Clinic', typeId: 1, areaId: 71, locationId: 10}
+  , {id: 11, name: 'Fatima Clinic and Maternity Hospital', typeId: 2, areaId: 24, locationId: 11}
 ];
 
 const centreTypes = [
@@ -337,23 +337,30 @@ const centreAreas = [
   ,{id: 	175	, name: 'Reta Plot Uc-04',        region: 'Korangi', city: 'Karachi', state: 'Sindh'}
   ,{id: 	176	, name: 'Moria Goth Uc-05',       region: 'Korangi', city: 'Karachi', state: 'Sindh'}
   ,{id: 	177	, name: 'Rifah Aam Uc-06',        region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	178	, name: 'Al Falah Society Uc-07', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	178	, name: 'DHA Phase 1', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	179	, name: 'DHA Phase 2', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	180	, name: 'DHA Phase 3', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	181	, name: 'DHA Phase 4', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	182	, name: 'DHA Phase 5', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	183	, name: 'DHA Phase 6', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	184	, name: 'DHA Phase 7', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
+  ,{id: 	185	, name: 'DHA Phase 8', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
   ]						
               
     
 // const centreAreas = [
-//   {id: 1, name: 'Gulshan-e-Iqbal', iconURL: '', romanUrdu:''}
-// , {id: 2, name: 'Clifton', iconURL: '', romanUrdu:''}
-// , {id: 3, name: 'Defence Housing Authority Phose I' , iconURL: '', romanUrdu:''}
-// , {id: 4, name: 'Defence Housing Authority Phose II', iconURL: '', romanUrdu:''}
-// , {id: 5, name: 'Defence Housing Authority Phose III', iconURL: '', romanUrdu:''}
-// , {id: 6, name: 'Defence Housing Authority Phose IV', iconURL: '', romanUrdu:''}
-// , {id: 7, name: 'Defence Housing Authority Phose V' , iconURL: '', romanUrdu:''}
-// , {id: 8, name: 'Gulzar E Hijri Scheme 33'      , iconURL: '', romanUrdu:''}
-// , {id: 9, name: 'Saddar', iconURL: '', romanUrdu:''}
-// , {id: 10, name: 'Metrovil Colony', iconURL: '', romanUrdu:''}
-// , {id: 11, name: 'Bahar Colony', iconURL: '', romanUrdu:''}
-// , {id: 12, name: 'Hussainabad', iconURL: '', romanUrdu:''}
+//   1{id: 142, name: 'Gulshan-e-Iqbal', iconURL: '', romanUrdu:''}
+// , 2{id: 85, name: 'Clifton', iconURL: '', romanUrdu:''}
+// , 3{id: 178, name: 'Defence Housing Authority Phose I' , iconURL: '', romanUrdu:''}
+// , 4{id: 179, name: 'Defence Housing Authority Phose II', iconURL: '', romanUrdu:''}
+// , 5{id: 180, name: 'Defence Housing Authority Phose III', iconURL: '', romanUrdu:''}
+// , 6{id: 181, name: 'Defence Housing Authority Phose IV', iconURL: '', romanUrdu:''}
+// , 7{id: 182, name: 'Defence Housing Authority Phose V' , iconURL: '', romanUrdu:''}
+// , 8{id: 149, name: 'Gulzar E Hijri Scheme 33'      , iconURL: '', romanUrdu:''}
+// , 9{id: 83, name: 'Saddar', iconURL: '', romanUrdu:''}
+// , 10{id: 148, name: 'Metrovil Colony', iconURL: '', romanUrdu:''}
+// , 11{id: 71, name: 'Bahar Colony', iconURL: '', romanUrdu:''}
+// , 12{id: 24, name: 'Hussainabad', iconURL: '', romanUrdu:''}
 // ];
 
 const patients = [
