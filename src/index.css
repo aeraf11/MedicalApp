@@ -1,0 +1,233 @@
+#app {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.ct-topbar {
+	text-align: right;
+	background: #eee;
+	height: 35px;
+	margin-top: -12px;
+}
+.ct-topbar__list {
+	margin-bottom: 0px;
+}
+.ct-language__dropdown {
+	padding-top: 8px;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 110%;
+	left: -3px;
+	-webkit-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+	width: 180px;
+	text-align: center;
+	padding-top: 0;
+	z-index: 200;
+}
+.ct-language__dropdown li {
+	background: #222;
+	padding: 5px;
+}
+.ct-language__dropdown li a {
+	display: block;
+}
+.ct-language__dropdown li:first-child {
+	padding-top: 10px;
+	border-radius: 3px 3px 0 0;
+}
+.ct-language__dropdown li:last-child {
+	padding-bottom: 10px;
+	border-radius: 0 0 3px 3px;
+}
+.ct-language__dropdown li:hover {
+	background: #444;
+}
+.ct-language__dropdown:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 8px;
+	height: 0;
+	border: 0 solid transparent;
+	border-right-width: 8px;
+	border-left-width: 8px;
+	border-bottom: 8px solid #222;
+}
+.ct-language {
+	position: relative;
+	background: #00aced;
+	color: #fff;
+	padding: 10px 0;
+}
+.ct-language:hover .ct-language__dropdown {
+	max-height: 200px;
+	padding-top: 8px;
+}
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}
+
+.navbar-brand > img {
+	padding-top: 11px;
+	width: 130px;
+	margin-left: 15px;
+}
+.navbar-brand {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	margin-right: 20px;
+}
+
+.navbar {
+	background-color: #ddd;
+	font-size: larger;
+	font-weight: bold;
+	font-family: cursive;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	padding: 8px 19px 9px !important;
+}
+.navbar-nav > li.active {
+	padding: 8px 0px 9px 0;
+}
+.navbar-right {
+	padding-top: 0;
+}
+.navbar-default .navbar-nav > li > a::after {
+	background-color: transparent;
+	border-bottom: 3px solid #d2282e;
+}
+.navbar-default .navbar-nav > li {
+	display: inline-block;
+	text-align: center;
+	float: none;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover {
+	color: #fff;
+	background-color: #0392cc;
+}
+select.form-control {
+	font-size: 15px;
+}
+body {
+	font-size: 15px;
+}
+.clinic-appointment-body {
+	height: 600px;
+}
+.appointment-location {
+	width: 100%;
+}
+.appointment-body {
+	width: 100%;
+	display: -webkit-box;
+}
+.appointment-doctors {
+	min-width: 175px;
+}
+.appointment-events {
+	width: 40%;
+	min-width: 355px;
+}
+.appointment-trans {
+	width: 40%;
+	height: 500px;
+	min-width: 400px;
+}
+.select-doctor {
+	width: 100%;
+}
+
+.timeSpan {
+	margin: 0px;
+	vertical-align: super;
+}
+.mainTitle {
+	display: inline-flex;
+}
+.main-container {
+	/* width: 100%;
+	display: -webkit-inline-box; */
+}
+.table-body {
+	width: 100%;
+}
+.table-heading {
+	width: 100%;
+	display: -webkit-inline-box;
+	height: 22px;
+	font-weight: bold;
+}
+.table-median-line {
+	background-color: #ddd;
+	height: 2px;
+	margin: 14px 0 5px 0;
+}
+.left-container {
+	width: 20%;
+	margin: 5px 0 0px 0;
+	font-size: 12px;
+}
+.right-container {
+	width: 90%;
+	margin: 5px 0 0px 0;
+	font-size: 10px;
+	display: contents;
+}
+button {
+	width: 100px;
+}
+.out {
+	width: 100%;
+	overflow: auto;
+}
+.in {
+	width: 412px;
+	display: inline-flex;
+}
+button.btn-appointment {
+	padding: 0;
+	text-align: left;
+	font-size: 8px;
+	height: 24px;
+	vertical-align: top;
+}
+.fit-content {
+	min-width: fit-content;
+}
+/* appointments */
+.ap-booking-applied {
+	background-color: #f5a0a0;
+}
+.ap-manager-review {
+	background-color: rgb(248, 220, 232);
+}
+.ap-approved {
+	background-color: cadetblue;
+}
+.ap-canceled {
+	background-color: rgb(209, 215, 245);
+}
+.ap-patient-arrived {
+	background-color: rgb(245, 196, 161);
+}
+.ap-with-doctor {
+	background-color: rgb(156, 185, 238);
+}
+.ap-finished {
+	background-color: rgb(32, 236, 32);
+}
+.ap-empty {
+	background-color: rgb(185, 175, 162);
+}
