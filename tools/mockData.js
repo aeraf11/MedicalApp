@@ -137,7 +137,7 @@ const locations = [
   , {id: 11, address: 'Plot No 871, Federal B Area Hussainabad Block 3', town: 'Gulberg Town', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
 ];
 const centres = [
-    {id: 1, name: 'The Clinic', typeId: 1, areaId: 1, locationId: 142}
+    {id: 1, name: 'The Clinic', typeId: 1, areaId: 142, locationId: 1}
   , {id: 2, name: 'Noor Clinic', typeId: 1, areaId: 85, locationId: 2}
   , {id: 3, name: 'Zubaida Machiyara Trust Clinic', typeId: 1, areaId: 142, locationId: 3}
   , {id: 4, name: 'Poly Clinic', typeId: 1, areaId: 149, locationId: 4}
@@ -148,6 +148,10 @@ const centres = [
   , {id: 9, name: 'Dr.Aliya s Haqqani Clinic', typeId: 1, areaId: 182, locationId: 9}
   , {id: 10, name: 'Maryam Clinic', typeId: 1, areaId: 71, locationId: 10}
   , {id: 11, name: 'Fatima Clinic and Maternity Hospital', typeId: 2, areaId: 24, locationId: 11}
+  , {id: 12, name: "Tahir Clinic",typeId: 2,areaId: 179,locationId: 7,
+      location: {id: 7,address: "Plot 8c 4th Sunset St, Phase 2 Commercial Area",town: "Defence Housing Authority",city: "Karachi",postcode: "75500",state: "Sindh",country: "Pakistan",phone: ""},
+      createdAt: 1610453323703
+    }
 ];
 
 const centreTypes = [

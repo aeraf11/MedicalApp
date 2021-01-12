@@ -10,6 +10,7 @@ import { loadPatients } from "../../redux/actions/patientAction";
 import { loadEvents } from "../../redux/actions/eventAction";
 import { loadAppointments } from "../../redux/actions/appointmentAction";
 import PropTypes from "prop-types";
+import CentreForm from './CentreForm';
 //import AppointmentForm from './AppointmentForm';
 import CentreLocation from './CentreLocation';
 import CentreDoctors from './CentreDoctors';
@@ -118,7 +119,10 @@ function ManageClinicAppointmentPage ({
         const { name, value } = event.target;
         setCentre(prevCentre => ({
           ...prevCentre, 
-          [name]: name === "locationId" ? parseInt(value, 10) : value
+          [name]: name === "locationId" ? parseInt(value, 10) 
+          : name === "typeId" ? parseInt(value, 10) 
+          : name === "areaId" ? parseInt(value, 10) 
+          : value
         }));
       }
 
@@ -235,13 +239,6 @@ function ManageClinicAppointmentPage ({
 
                 </div>
             </div>
-            {/* <AppointmentForm 
-            centre={centre} 
-            errors={errors} 
-            locations= {locations} 
-            onChange={handleChange}
-            onSave={handleSave}
-            /> */}
             </div>
           </>
         )}

@@ -57,7 +57,7 @@ class CentresPage extends React.Component {
   render() {
     return (
       <>
-        {this.state.redirectToAddCentresPage && <Redirect to="/centre" />}
+        {this.state.redirectToAddCentresPage && <Redirect to="/centreedit" />}
         <h2>Medical Centres</h2>
         <button
             style={{marginBottom: 20}}

@@ -7,6 +7,7 @@ import PageNotFound from "./PageNotFound";
 import CoursesPage from "./courses/CoursesPage";
 import CentresPage from "./centres/CentresPage";
 import ManageCoursePage from "./courses/ManageCoursePage";
+import ManageCentre from "./centres/ManageCentre";
 import ManageClinicAppointmentPage from "./centres/ManageClinicAppointmentPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,6 +25,8 @@ function App() {
         <Route path="/centres" component={CentresPage} />
         <Route path="/centre/:id" component={ManageClinicAppointmentPage} />
         <Route path="/centre" component={ManageClinicAppointmentPage} />
+        <Route path="/centreedit" component={ManageCentre} />
+        <Route path="/centreedit/:id" component={ManageCentre} />
         <Route component={PageNotFound} />
       </Switch>
       <ToastContainer autoClose={3000} hideProgressBar />

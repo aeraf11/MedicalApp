@@ -58,6 +58,7 @@ const CentreList = ({ centres, centreTypes, centreAreas, onTypeFiltered, onAreaF
             <td>{centre.centreTypeName}</td>
             <td>{centre.centreAreaName}</td>
             <td>
+              <Link to={"/centreedit/" + centre.id}>Edit</Link>
             </td>
           </tr>
         );
