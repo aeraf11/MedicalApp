@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import * as centresApi from "../../api/centresApi";
+import * as centreAreasApi from "../../api/centreAreasApi";
 import { beginApiCall, apiCallError } from "./apiStatusActions";
 
 export function loadCentresSuccess(centres) {
@@ -25,7 +26,15 @@ export function loadCentres() {
     return centresApi
       .getCentres()
       .then(centres => {
-        dispatch(loadCentresSuccess(centres));
+        return centreAreasApi.getCentreAreas()
+        .then(areas => {
+          centres.forEach(c => {
+            c.region = areas.find(a=>a.id === c.areaId).region;
+          });
+          // console.log(centres);
+          // console.log(areas);
+          dispatch(loadCentresSuccess(centres));
+        })
       })
       .catch(error => {
         dispatch(apiCallError(error));

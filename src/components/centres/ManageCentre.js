@@ -3,13 +3,12 @@ import { connect } from "react-redux";
 import { loadCentres, saveCentre } from "../../redux/actions/centreAction";
 import { loadCentreTypes } from "../../redux/actions/centreTypeAction";
 import { loadCentreAreas } from "../../redux/actions/centreAreaAction";
-import { loadLocations } from "../../redux/actions/locationAction";
+import { loadLocations, saveLocation } from "../../redux/actions/locationAction";
 import PropTypes from "prop-types";
 import CentreLocation from './CentreLocation';
 import CentreForm from './CentreForm';
 import {newCentre} from '../../../tools/mockData';
-// import { Redirect } from "react-router-dom";
-// import Spinner from "../common/Spinner";
+import Spinner from "../common/Spinner";
 import { toast } from "react-toastify";
 
 function ManageCentre ({
@@ -30,6 +29,7 @@ function ManageCentre ({
     useEffect( () => {
     if (centres.length === 0) {
       loadCentres().catch(error => {
+        // console.log(centres)
         alert("Loading centres failed" + error);
       });
     }
@@ -69,7 +69,8 @@ function ManageCentre ({
         event.preventDefault();
         // if (!formIsValid()) return;
         // setSaving(true);
-        saveCentre(centre)
+        var changedCentre = {id:centre.id, name: centre.name, typeId: centre.typeId, areaId: centre.areaId, locationId: centre.locationId};
+        saveCentre(changedCentre)
           .then(() => {
             toast.success("Centre saved.");
             history.push("/centres");
@@ -80,21 +81,33 @@ function ManageCentre ({
           });
       }
       function setCentreValues(){
-        if(centre && locations && locations.length )
-        centre.location = locations.find(l => l.id === centre.locationId);
-        centre.area = centreAreas.find(a => a.id === centre.areaId);
-        centre.type = centreTypes.find(t => t.id === centre.typeId);
+        if(centre && locations && locations.length ){
+          centre.location = locations.find(l => l.id === centre.locationId);
+          centre.area = centreAreas.find(a => a.id === centre.areaId);
+          centre.type = centreTypes.find(t => t.id === centre.typeId);
+          // console.log(centre);
+        }
       }
+      // function setLocationValues(){
+      //   if(centre && locations && locations.length && centreAreas && centreAreas.length ){
+      //     locations.forEach(l => {
+      //       var selectedArea = centreAreas.filter(a => a.id === l.areaId)
+      //       if(selectedArea && l.id > 0){
+      //         l.areaName = selectedArea[0].name;
+      //       }            
+      //     });
+      //   }
+      // }
     return (
       <>
             <h2>{centre.name}</h2>
 
         {
-            setCentreValues(),
-            
-        // this.props.loading ? (
-        //   <Spinner />
-        // ) : 
+          setCentreValues(),
+          //setLocationValues(),
+        props.loading ? (
+          <Spinner />
+        ) : 
         (
           <>
 
@@ -102,15 +115,17 @@ function ManageCentre ({
             <div className="appointment-location">
                 { centre.location ? <CentreLocation location={centre.location}/> : <div/> }
             </div>
+            {centre.id && !centre.region ? location.reload(): 
             <CentreForm 
             centre={centre} 
             errors={errors} 
-            locations= {locations}
+            locations= {centre.areaId ? locations.filter(l => l.areaId === centre.areaId): locations}
+            regions={[...new Set(centreAreas.map(r => r.region))]}
             centreTypes= {centreTypes}
-            centreAreas= {centreAreas}
+            centreAreas= {centre.region ? centreAreas.filter(ca => ca.region === centre.region): centreAreas}
             onChange={handleChange}
             onSave={handleSave}
-            />
+            />}
             </div>
           </>
         )}
@@ -126,10 +141,12 @@ ManageCentre.propTypes = {
   centreTypes: PropTypes.array.isRequired,
   centreAreas: PropTypes.array.isRequired,
   saveCentre: PropTypes.func.isRequired,
+  saveLocation: PropTypes.func.isRequired,
   loadCentres: PropTypes.func.isRequired,
   loadLocations: PropTypes.func.isRequired,
   loadCentreTypes: PropTypes.func.isRequired,
   loadCentreAreas: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
   history: PropTypes.object.isRequired
 };
 
@@ -139,7 +156,7 @@ export function getCentreById(centres, id){
 
 function mapStateToProps(state, ownProps) {
     var locId = ownProps.location.pathname ? ownProps.location.pathname.split('/')[2] : 0;
-    const id = locId//ownProps.match.params.id;
+    const id = locId
     const centre = id && state.centres.length > 0 ? getCentreById(state.centres, id) : newCentre
   return {
       centre,
@@ -147,6 +164,7 @@ function mapStateToProps(state, ownProps) {
     locations: state.locations,
     centreTypes: state.centreTypes,
     centreAreas: state.centreAreas
+    , loading: state.apiCallsInProgress > 0
   }
 }
 
@@ -156,6 +174,7 @@ const mapDispatchToProps = {
       , loadCentreTypes
       , loadCentreAreas
       , saveCentre
+      , saveLocation
     }
 
 export default connect(

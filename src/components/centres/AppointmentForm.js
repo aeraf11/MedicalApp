@@ -34,7 +34,7 @@ const AppointmentForm = ({
         defaultOption="Select Location"
         options={locations.map(loc => ({
           value: loc.id,
-          text: loc.address + ', ' + loc.town + ', ' + loc.city
+          text: loc.address + ', ' + loc.region + ', ' + loc.city
         }))}
         onChange={onChange}
         error={errors.loc}

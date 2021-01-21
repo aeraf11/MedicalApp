@@ -82,7 +82,11 @@ function getStatusClass (sid) {
       }
 }
 
-const CentreAppointments = ({ selectedAppointments, onSelectAppointment, selectedEvent, patients }) => (
+const CentreAppointments = ({ 
+    selectedAppointments
+    //, onSelectAppointment
+    , selectedEvent
+    , patients }) => (
 
     <div>
         {

@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import * as locationsApi from "../../api/locationsApi";
+import * as centreAreasApi from "../../api/centreAreasApi";
 import { beginApiCall, apiCallError } from "./apiStatusActions";
 
 export function loadLocationsSuccess(locations) {
@@ -23,7 +24,18 @@ export function loadLocations() {
     return locationsApi
       .getLocations()
       .then(locations => {
-        dispatch(loadLocationsSuccess(locations));
+        return centreAreasApi.getCentreAreas()
+        .then(careas => {
+          // console.log(careas);
+          locations.forEach(l => {
+            var locArea = careas.filter(ca => ca.id === l.areaId)
+            if(locArea && locArea.length){
+              l.areaName = locArea[0].name;
+              l.region =locArea[0].region;
+            }            
+          });
+          dispatch(loadLocationsSuccess(locations));
+        });
       })
       .catch(error => {
         dispatch(apiCallError(error));
@@ -31,7 +43,9 @@ export function loadLocations() {
       });
   };
 }
+
 export function saveLocation(location) {
+  // debugger;
   //eslint-disable-next-line no-unused-vars
   return function(dispatch, getState) {
     dispatch(beginApiCall());

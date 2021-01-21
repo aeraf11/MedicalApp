@@ -15,7 +15,8 @@ class CentresPage extends React.Component {
   state = {
     redirectToAddCentresPage: false,
     typeId:"",
-    areaId:""
+    areaId:"",
+    regionId:""
   };
 
   componentDidMount() {
@@ -50,10 +51,24 @@ class CentresPage extends React.Component {
         this.setState({typeId: t.target.value});
       }
       filterByArea = (a) => {
-        //toast.success("changed Area" + a.target.value);
         this.setState({areaId: a.target.value});
       }
-
+      filterByRegion = (r) => {
+        this.setState({regionId: r.target.value});
+      }
+      getCentres = (centres) => {
+        var filteredCentres = centres;
+        if(this.state.typeId !== ""){
+          filteredCentres = centres.filter(c => c.typeId == parseInt(this.state.typeId))
+        }
+        if(this.state.areaId !== ""){
+          filteredCentres = filteredCentres.filter(c => c.areaId == parseInt(this.state.areaId))
+        }
+        if(this.state.regionId !== ""){
+          filteredCentres = filteredCentres.filter(c => c.centreRegionName == this.state.regionId)
+        }
+        return filteredCentres;
+      }
   render() {
     return (
       <>
@@ -71,16 +86,13 @@ class CentresPage extends React.Component {
             <CentreList
                 onTypeFiltered={this.filterByType}
                 onAreaFiltered={this.filterByArea}
-                centres={ this.state.typeId === "" && this.state.areaId === ""
-                            ? this.props.centres 
-                            : this.state.typeId !== "" && this.state.areaId !== "" 
-                            ? this.props.centres.filter(c => c.typeId == parseInt(this.state.typeId)).filter(c => c.areaId == parseInt(this.state.areaId))
-                            : this.state.typeId !== ""
-                            ? this.props.centres.filter(c => c.typeId == parseInt(this.state.typeId))
-                            : this.props.centres.filter(c => c.areaId == parseInt(this.state.areaId))
-                        }
+                onRegionFiltered={this.filterByRegion}
+                centres={ this.getCentres(this.props.centres) }
+                        
                 centreTypes={this.props.centreTypes}
-                centreAreas={this.props.centreAreas}
+                centreAreas={this.state.regionId === "" ? this.props.centreAreas 
+                : this.props.centreAreas.filter(a => a.region == this.state.regionId)}
+                regions={[...new Set(this.props.centreAreas.map(r => r.region))]}
             />
           </>
         )}
@@ -94,8 +106,8 @@ CentresPage.propTypes = {
   centres: PropTypes.array.isRequired,
   centreTypes: PropTypes.array.isRequired,
   centreAreas: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired
+  actions: PropTypes.object.isRequired
+  , loading: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
@@ -107,15 +119,15 @@ function mapStateToProps(state) {
         : state.centres.map(centre => {
             return {
               ...centre
-              //, location: state.locations.find(a => a.id === centre.locationId)
               , centreTypeName: state.centreTypes.find(a => a.id === centre.typeId)?state.centreTypes.find(a => a.id === centre.typeId).name : ""
               , centreAreaName: state.centreAreas.find(a => a.id === centre.areaId)?state.centreAreas.find(a => a.id === centre.areaId).name : ""
+              , centreRegionName: state.centreAreas.find(a => a.id === centre.areaId)?state.centreAreas.find(a => a.id === centre.areaId).region : ""
             };
           }),
     locations: state.locations,
     centreTypes: state.centreTypes,
-    centreAreas: state.centreAreas,
-    loading: state.apiCallsInProgress > 0
+    centreAreas: state.centreAreas
+    , loading: state.apiCallsInProgress > 0
   };
 }
 

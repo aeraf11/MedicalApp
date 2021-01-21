@@ -120,6 +120,9 @@
 select.form-control {
 	font-size: 15px;
 }
+input.form-control {
+	font-size: 15px;
+}
 body {
 	font-size: 15px;
 }
@@ -230,4 +233,16 @@ button.btn-appointment {
 }
 .ap-empty {
 	background-color: rgb(185, 175, 162);
+}
+.filter-centre-area{
+	display:inline-flex;
+}
+table thead tr th div.form-group.filterers{
+	height: 35px;
+}
+table thead tr th div.form-group.filterers.region{
+	width: 35%;
+}
+table thead tr th div.form-group.filterers.area{
+	width: 65%;
 }

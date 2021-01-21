@@ -10,7 +10,7 @@ import { loadPatients } from "../../redux/actions/patientAction";
 import { loadEvents } from "../../redux/actions/eventAction";
 import { loadAppointments } from "../../redux/actions/appointmentAction";
 import PropTypes from "prop-types";
-import CentreForm from './CentreForm';
+// import CentreForm from './CentreForm';
 //import AppointmentForm from './AppointmentForm';
 import CentreLocation from './CentreLocation';
 import CentreDoctors from './CentreDoctors';
@@ -19,7 +19,7 @@ import CentreAppointments from './CentreAppointments';
 import {newCentre} from '../../../tools/mockData';
 // import { Redirect } from "react-router-dom";
 // import Spinner from "../common/Spinner";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 function ManageClinicAppointmentPage ({
     centres
@@ -42,14 +42,14 @@ function ManageClinicAppointmentPage ({
     , loadPatients
     , loadEvents
     , loadAppointments
-    , history
-    , saveCentre
+    // , history
+    // , saveCentre
     , ...props
 }) {
     const [centre, setCentre] = useState({...props.centre});
     const [docId, setDocId] = useState({...props.docId});
     const [evtId, setEvtId] = useState({...props.evtId});
-    const [errors, setErrors] = useState({});
+    // const [errors, setErrors] = useState({});
     useEffect( () => {
         selectedDoctorId = 0;
         selectedEventId = 0;
@@ -66,13 +66,8 @@ function ManageClinicAppointmentPage ({
         alert("Loading types failed" + error);
       });
     }
-
-    // if(!docId){
-    //     //docId = 0;
-    // }else {
-        setDocId({...props.docId});
-        setEvtId({...props.evtId});
-    // }
+    setDocId({...props.docId});
+    setEvtId({...props.evtId});
     if (centreAreas.length === 0) {
         loadCentreAreas().catch(error => {
           alert("Loading areas failed" + error);
@@ -115,31 +110,31 @@ function ManageClinicAppointmentPage ({
       }
       }, [props.centre, props.docId, props.evtId]);
 
-      function handleChange(event) {
-        const { name, value } = event.target;
-        setCentre(prevCentre => ({
-          ...prevCentre, 
-          [name]: name === "locationId" ? parseInt(value, 10) 
-          : name === "typeId" ? parseInt(value, 10) 
-          : name === "areaId" ? parseInt(value, 10) 
-          : value
-        }));
-      }
+      // function handleChange(event) {
+      //   const { name, value } = event.target;
+      //   setCentre(prevCentre => ({
+      //     ...prevCentre, 
+      //     [name]: name === "locationId" ? parseInt(value, 10) 
+      //     : name === "typeId" ? parseInt(value, 10) 
+      //     : name === "areaId" ? parseInt(value, 10) 
+      //     : value
+      //   }));
+      // }
 
-      function handleSave(event) {
-        event.preventDefault();
-        // if (!formIsValid()) return;
-        // setSaving(true);
-        saveCentre(centre)
-          .then(() => {
-            toast.success("Centre saved.");
-            history.push("/centres");
-          })
-          .catch(error => {
-            // setSaving(false);
-            setErrors({ onSave: error.message });
-          });
-      }
+      // function handleSave(event) {
+      //   event.preventDefault();
+      //   // if (!formIsValid()) return;
+      //   // setSaving(true);
+      //   saveCentre(centre)
+      //     .then(() => {
+      //       toast.success("Centre saved.");
+      //       history.push("/centres");
+      //     })
+      //     .catch(error => {
+      //       // setSaving(false);
+      //       setErrors({ onSave: error.message });
+      //     });
+      // }
       function setCentreValues(){
         if(centre && locations && staff && doctors && events && appointments
           && locations.length && staff.length && doctors.length && events.length && appointments.length)
@@ -188,7 +183,7 @@ function ManageClinicAppointmentPage ({
       }
 
       function onSelectAppointment(e){
-        //   console.log(e);
+          console.log(e);
         // if(!e){
         //     setEvtId({evtId, undefined});
         // } else {

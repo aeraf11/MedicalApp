@@ -94,7 +94,7 @@ const newCourse = {
 const roles = [
     {id: 1, name: 'admin', description: ''}
   , {id: 2, name: 'manager', description: ''}
-  , {id: 3, name: 'expert', description: ''}
+  , {id: 3, name: 'doctor', description: ''}
   , {id: 4, name: 'technician', description: ''}
   , {id: 5, name: 'clerk', description: ''}
   , {id: 6, name: 'nurse', description: ''}
@@ -104,16 +104,16 @@ const roles = [
 const staff = [
       {id: 1, initials: '', firstName: 'Muammed' , surname: 'Asif'     , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'1', centreId: 1, isDoctor: false, designation:'', qualification:''}
   ,   {id: 2, initials: '', firstName: 'Hashim'  , surname: 'Ansari'   , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'2', centreId: 1, isDoctor: false, designation:'', qualification:''}
-  ,   {id: 3, initials: 'Dr', firstName: 'Faheem'  , surname: 'Zaman'    , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true, designation:'General Physician', qualification:'MBBS'}
-  ,   {id: 4, initials: 'Dr', firstName: 'Kareem'  , surname: 'Aleem'    , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true, designation:'General Physician', qualification:'MBBS'}
+  ,   {id: 3, initials: 'Dr', firstName: 'Faheem', surname: 'Zaman'    , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true,  designation:'General Physician', qualification:'MBBS'}
+  ,   {id: 4, initials: 'Dr', firstName: 'Kareem', surname: 'Aleem'    , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true,  designation:'General Physician', qualification:'MBBS'}
   ,   {id: 5, initials: '', firstName: 'Mubashir', surname: 'Rana'     , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'4', centreId: 1, isDoctor: false, designation:'', qualification:''}
   ,   {id: 6, initials: '', firstName: 'Javaid'  , surname: 'Saleem'   , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'8', centreId: 1, isDoctor: false, designation:'', qualification:''}
   ,   {id: 7, initials: '', firstName: 'Muhammed', surname: 'Faiyaz'   , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'8', centreId: 1, isDoctor: false, designation:'', qualification:''}
   ,   {id: 8, initials: '', firstName: 'Samreen' , surname: 'Hussain'  , dateOfBirth: '', gender: 'F', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: false, designation:'', qualification:''}
   ,   {id: 9, initials: '', firstName: 'Mehwish' , surname: 'Khan'     , dateOfBirth: '', gender: 'F', mobileNo: '', locationId:'1', roleId:'6', centreId: 1, isDoctor: false, designation:'', qualification:''}
-  ,   {id: 10, initials: '', firstName: 'Shahbaz' , surname: 'Qureshi'  , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'7', centreId: 1, isDoctor: false, designation:'', qualification:''}
-  ,   {id: 11, initials: 'Dr', firstName: 'Isha'    , surname: 'Kareem'   , dateOfBirth: '', gender: 'F', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true, designation:'General Physician', qualification:'MBBS'}
-  ,   {id: 12, initials: '', firstName: 'Mahmood' , surname: 'Chaudhry' , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'5', centreId: 1, isDoctor: false, designation:'', qualification:''}
+  ,   {id: 10, initials: '', firstName: 'Shahbaz', surname: 'Qureshi'  , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'7', centreId: 1, isDoctor: false, designation:'', qualification:''}
+  ,   {id: 11, initials: 'Dr', firstName: 'Isha' , surname: 'Kareem'   , dateOfBirth: '', gender: 'F', mobileNo: '', locationId:'1', roleId:'3', centreId: 1, isDoctor: true,  designation:'General Physician', qualification:'MBBS'}
+  ,   {id: 12, initials: '', firstName: 'Mahmood', surname: 'Chaudhry' , dateOfBirth: '', gender: 'M', mobileNo: '', locationId:'1', roleId:'5', centreId: 1, isDoctor: false, designation:'', qualification:''}
 ];
 
 const doctors =  [
@@ -124,34 +124,39 @@ const doctors =  [
 const newDoctor = {id: 0, staffId: 0, designation: '', qualification: '', detail: ''}
 
 const locations = [
-    {id: 1, address: 'Zia Colony Block 1', town: 'Gulshan-e-Iqbal', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 2, address: 'Block 5 Clifton', town: 'Clifton', city: 'Karachi', postcode: '75600', state: 'Sindh', country: 'Pakistan', phone:'+92 331 2768450'}
-  , {id: 3, address: 'E38, 2 Allama Shabbir Ahmed Usmani Rd, Block 4 ', town: 'Gulshan-e-Iqbal', city: 'Karachi', postcode: '75300', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 4, address: 'Iqbal Kiran Hospital Rd, Zehra Nagar', town: 'Zohra Nagar Gulzar E Hijri Scheme 33', city: 'Karachi', postcode: '75280', state: 'Sindh', country: 'Pakistan', phone:'+92 345 8940437'}
-  , {id: 5, address: 'Saddar Karach', town: 'Saddar', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 6, address: 'Allama Shabbir Ahmed Usmani Rd', town: 'Block 4 Gulshan-e-Iqbal', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:'+92 21 34981242'}
-  , {id: 7, address: 'Plot 8c 4th Sunset St, Phase 2 Commercial Area', town: 'Defence Housing Authority', city: 'Karachi', postcode: '75500', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 8, address: 'Gulzar-e-Hijri Block 2/2', town: 'Metrovil Colony', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 9, address: '5/c 31st St, Phase V Tauheed Commercial Area Defence V ', town: 'Defence Housing Authority', city: 'Karachi', postcode: '75500', state: 'Sindh', country: 'Pakistan', phone:'+92 21 35820113'}
-  , {id: 10, address: 'Gulbahar', town: 'Nao Bahar Colony', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
-  , {id: 11, address: 'Plot No 871, Federal B Area Hussainabad Block 3', town: 'Gulberg Town', city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+    {id: 1, address: 'Zia Colony Block 1', region: 'Gulshan',                               areaId: 104, city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 2, address: 'Block 5 Clifton', region: 'Clifton',                                  areaId: 13,  city: 'Karachi', postcode: '75600', state: 'Sindh', country: 'Pakistan', phone:'+92 331 2768450'}
+  , {id: 3, address: 'E38, 2 Allama Shabbir Ahmed Usmani Rd, Block 4 ', region: 'Gulshan',  areaId: 104, city: 'Karachi', postcode: '75300', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 4, address: 'Iqbal Kiran Hospital Rd, Zehra Nagar', region: 'Gulshan',             areaId: 110, city: 'Karachi', postcode: '75280', state: 'Sindh', country: 'Pakistan', phone:'+92 345 8940437'}
+  , {id: 5, address: 'Saddar Karach', region: 'City Central' ,                              areaId: 26,  city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 6, address: 'Allama Shabbir Ahmed Usmani Rd', region: 'Gulshan' ,                  areaId: 104, city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:'+92 21 34981242'}
+  , {id: 7, address: 'Plot 8c 4th Sunset St, Phase 2 Commercial Area', region: 'DHA' ,      areaId: 2,   city: 'Karachi', postcode: '75500', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 8, address: 'Gulzar-e-Hijri Block 2/2', region: 'Gulshan' ,                        areaId: 110, city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 9, address: '5/c 31st St, Tauheed Commercial Area Defence V ', region: 'DHA' ,     areaId: 5,   city: 'Karachi', postcode: '75500', state: 'Sindh', country: 'Pakistan', phone:'+92 21 35820113'}
+  , {id: 10, address: 'Gulbahar', region: 'Gulshan' ,                                       areaId: 118, city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 11, address: 'Plot 871, Federal B Area Hussainabad Block 3', region: 'Central' ,   areaId: 94,  city: 'Karachi', postcode: '', state: 'Sindh', country: 'Pakistan', phone:''}
+  , {id: 12,address: "C-11, Block-4,، Shahrah-e-Pakistan، Block 4",region: "Central",       areaId: 94,city: "Karachi",postcode: "",state: "Sindh",country: "Pakistan",phone: "",createdAt: 1611072707423  }
+  , {id: 13,address: "419/A Amir Khusro Rd, near Muhammad Ali society, Block B Adamjee Nagar Society",region: "Society",areaId: 131,city: "Karachi",postcode: "",state: "Sindh",country: "Pakistan",phone: "123456",updatedAt: "2021-01-19T18:17:22.700Z"}
+  , {id: 14,address: "Block 1 Jalalabad",region: "Central",                                 areaId: 91,city: "Karachi",postcode: "",state: "Sindh",country: "Pakistan",phone: "123"}
 ];
+const newLocation = {id: 0, address: '', region: '' , areaId: 0, city: '', postcode: '', state: '', country: '', phone:''}
+
 const centres = [
-    {id: 1, name: 'The Clinic', typeId: 1, areaId: 142, locationId: 1}
-  , {id: 2, name: 'Noor Clinic', typeId: 1, areaId: 85, locationId: 2}
-  , {id: 3, name: 'Zubaida Machiyara Trust Clinic', typeId: 1, areaId: 142, locationId: 3}
-  , {id: 4, name: 'Poly Clinic', typeId: 1, areaId: 149, locationId: 4}
-  , {id: 5, name: 'Shahrukh clinic saddar', typeId: 1, areaId: 83, locationId: 5}
-  , {id: 6, name: 'ZMT Clinic Head Office', typeId: 1, areaId: 142, locationId: 6}
-  , {id: 7, name: 'Clinic5', typeId: 1, areaId: 179, locationId: 7}
-  , {id: 8, name: 'Fatima Clinic', typeId: 1, areaId: 148, locationId: 8}
-  , {id: 9, name: 'Dr.Aliya s Haqqani Clinic', typeId: 1, areaId: 182, locationId: 9}
-  , {id: 10, name: 'Maryam Clinic', typeId: 1, areaId: 71, locationId: 10}
-  , {id: 11, name: 'Fatima Clinic and Maternity Hospital', typeId: 2, areaId: 24, locationId: 11}
-  , {id: 12, name: "Tahir Clinic",typeId: 2,areaId: 179,locationId: 7,
-      location: {id: 7,address: "Plot 8c 4th Sunset St, Phase 2 Commercial Area",town: "Defence Housing Authority",city: "Karachi",postcode: "75500",state: "Sindh",country: "Pakistan",phone: ""},
-      createdAt: 1610453323703
-    }
+    {id: 1, name: 'The Clinic', typeId: 1, areaId: 104, locationId: 1}
+  , {id: 2, name: 'Noor Clinic', typeId: 1, areaId: 13, locationId: 2}
+  , {id: 3, name: 'Zubaida Machiyara Trust Clinic', typeId: 1, areaId: 104, locationId: 3}
+  , {id: 4, name: 'Poly Clinic', typeId: 1, areaId: 110, locationId: 4}
+  , {id: 5, name: 'Shahrukh clinic saddar', typeId: 1, areaId: 26, locationId: 5}
+  , {id: 6, name: 'ZMT Clinic Head Office', typeId: 1, areaId: 104, locationId: 6}
+  , {id: 7, name: 'Clinic5', typeId: 1, areaId: 2, locationId: 7}
+  , {id: 8, name: 'Fatima Clinic', typeId: 1, areaId: 110, locationId: 8}
+  , {id: 9, name: 'Dr.Aliya s Haqqani Clinic', typeId: 1, areaId: 5, locationId: 9}
+  , {id: 10, name: 'Maryam Clinic', typeId: 1, areaId: 118, locationId: 10}
+  , {id: 11, name: 'Fatima Clinic and Maternity Hospital', typeId: 2, areaId: 94, locationId: 11}
+  , {id: 12, name: "Tahir Clinic",typeId: 2,areaId: 2,locationId: 7}
+  , {id: 13,name: "Zainab Medical Centre",typeId: 2,areaId: 94,locationId: 12,createdAt: 1611072850384}
+  , {id: 14,name: "Tahir Clinic-Adamjee Nagar",typeId: 2,areaId: 131,locationId: 13,createdAt: 1611076112722}
+  , {id: 15,name: "Bushra Clinic",typeId: 1,areaId: 91,locationId: 14,createdAt: 1611082325321}
 ];
 
 const centreTypes = [
@@ -163,210 +168,187 @@ const centreTypes = [
   , {id: 6, name: 'Bone & Joint Hospital' , iconURL: '', romanUrdu:''}
   , {id: 7, name: 'General Hospital'      , iconURL: '', romanUrdu:''}
 ]
-const centreAreas = [						
-  {id: 	1	, name: 'Ibraheem Hyderi Uc-01',    region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	2	, name: 'Rehri Uc-02',            region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	3	, name: 'Cattle Colony Uc-03',    region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	4	, name: 'Quaidabad Uc-04',        region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	5	, name: 'Landhi Uc-05',           region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	6	, name: 'Gulshan-E-Hadeed Uc-06', region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	7	, name: 'Gaghar-07',              region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	8	, name: 'Murad Memon Goth Uc-01', region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	9	, name: 'Darsano Chana Uc-02',    region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	10	, name: 'Gadap Uc-03',          region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	11	, name: 'Gujro Uc-04',          region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	12	, name: 'Songal Uc-05',         region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	13	, name: 'Maymarabad Uc-06',     region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	14	, name: 'Yousuf Goth Uc-07',    region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	15	, name: 'Mangopir Uc-08',       region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	16	, name: 'Model Colony Uc-01',   region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	17	, name: 'Kala Board Uc-02',     region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	18	, name: 'Saudabad Uc-03',       region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	19	, name: 'Khokarapar Uc-04',     region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	20	, name: 'Jafar-E-Tayyar Uc-05', region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	21	, name: 'Gharibabad Uc-06',     region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	22	, name: 'Ghazi Brohi Goth Uc-07', region: 'Malir', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	23	, name: 'Azizabad Uc-01',       region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	24	, name: 'Karimabad Uc-02',      region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	25	, name: 'Aisha Manzil Uc-03',   region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	26	, name: 'Ancholi Uc-04',        region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	27	, name: 'Nasirabad Uc-05',      region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	28	, name: 'Yaseenabad Uc-06',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	29	, name: 'Water Pump Uc-07',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	30	, name: 'Shafeeque Mill Colony Uc-08', region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	31	, name: 'Rizvia Society Uc-01',   region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	32	, name: 'Firdos Colony Uc-02',    region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	33	, name: 'Super Market Uc-03',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	34	, name: 'Dak Khana Uc-04',        region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	35	, name: 'Qasiambad Uc-05',        region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	36	, name: 'Bandhani Colony Uc-06',  region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	37	, name: 'Sharifabad Uc-07',       region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	38	, name: 'Commercial Area Uc-08',  region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	39	, name: 'Mujahid Colony Uc-09',   region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	40	, name: 'Nazimabad No.01 Uc-10',  region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	41	, name: 'Abbasi Shaheed Uc-11',   region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	42	, name: 'Kalyana Uc-01',          region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	43	, name: 'Sir Syed Uc-02',         region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	44	, name: 'Fatima Jinnah Colony Uc-03', region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	45	, name: 'Godhra Uc-04',           region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	46	, name: 'Abu Zar Ghaffari Uc-05', region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	47	, name: 'Hakeem Ahsan Uc-06',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	48	, name: 'Madina Colony Uc-07',    region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	49	, name: 'Faisal Uc-08',           region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	50	, name: 'Khameeso Goth Uc-09',    region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	51	, name: 'Mustufa Colony Uc-10',   region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	52	, name: 'Khawaja Ajmeer Nagri Uc-11', region: 'Central	', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	53	, name: 'Gulshan-e-Saeed Uc-12',  region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	54	, name: 'Shah Nawaz Bhutto Colony Uc-13', region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	55	, name: 'Paposh Nagar Uc-01',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	56	, name: 'Pahar Ganj Uc-02',       region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	57	, name: 'Khando Goth Uc-03',      region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	58	, name: 'Haidery Uc-04',          region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	59	, name: 'Sakhi Hasan Uc-05',      region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	60	, name: 'Farooq-e-Azam Uc-06',    region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	61	, name: 'Nusrat Bhutto Colony Uc-07', region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	62	, name: 'Shadman Town Uc-08',     region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	63	, name: 'Buffer Zone Uc-09',      region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	64	, name: 'Buffer zone-1 Uc-10',    region: 'Central', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	65	, name: 'Agra Taj Colony Uc-01',  region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	66	, name: 'Darya Abad Uc-02',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	67	, name: 'Nawabad Uc-03',          region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	68	, name: 'Khada Memon Society Uc-04', region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	69	, name: 'Baghdadi Uc-05',         region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	70	, name: 'Shah Baig Line Uc-06',   region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	71	, name: 'Behar Colony Uc-07',     region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	72	, name: 'Ragiwara Uc-08',         region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	73	, name: 'Singo Line Uc-09',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	74	, name: 'Chakiwara Uc-10',        region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	75	, name: 'Allama Iqbal Colony Uc-11', region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	76	, name: 'Old Haji Camp Uc-01',    region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	77	, name: 'Garden Uc-02',           region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	78	, name: 'Kharadar Uc-03',         region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	79	, name: 'City Railway Station Uc-04', region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	80	, name: 'Nanak Wara Uc-05',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	81	, name: 'Gazdarabad Uc-06',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	82	, name: 'Millat Nagar/Islam Pura Uc-07', region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	83	, name: 'Saddar Uc-08',           region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	84	, name: 'Civil Line Uc-09',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	85	, name: 'Clifton Uc-10',          region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	86	, name: 'Kehkashan Uc-11',        region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	87	, name: 'Bhutta Village Uc-01',   region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	88	, name: 'Sultanabad Uc-02',       region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	89	, name: 'Kemari Uc-03',           region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	90	, name: 'Baba Bhit Uc-04',        region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	91	, name: 'Machar Colony Uc-05',    region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	92	, name: 'Maripur Uc-06',          region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	93	, name: 'Shershah Uc-07',         region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	94	, name: 'Gabo Pat Uc-08',         region: 'South', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	95	, name: 'Gulshan-E-Ghazi Uc-01',  region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	96	, name: 'Itahad Town Uc-02',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	97	, name: 'Islam Nagar Uc-03',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	98	, name: 'Nai Abbadi Uc-04',       region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	99	, name: 'Saeedabad Uc-05',        region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	100	, name: 'Muslim Mujahid Colony Uc-06', region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	101	, name: 'Muhajir Camp Uc-07',     region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	102	, name: 'Rasheedabad Uc-08',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	103	, name: 'Mominabad Uc-01',        region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	104	, name: 'Haryana Colony Uc-02',   region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	105	, name: 'Hanifabad Uc-03',        region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	106	, name: 'Mohammad Nagar Uc-04',   region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	107	, name: 'Madina Colony Uc-05',    region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	108	, name: 'Ghaziabad Uc-06',        region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	109	, name: 'Chisti Nagar Uc-07',     region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	110	, name: 'Bilal Colony Uc-08',     region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	111	, name: 'Iqbal Baloch Colony Uc-09', region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	112	, name: 'Ghabool Town Uc-10',     region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	113	, name: 'Data Nagar Uc-11',       region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	114	, name: 'Mujahidabad Uc-12',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	115	, name: 'Baloch Goth Uc-13',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	116	, name: 'Pak Colony Uc-01',       region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	117	, name: 'Old Golimar Uc-02',      region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	118	, name: 'Jahanabad Uc-03',        region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	119	, name: 'Metrovil Uc-04',         region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	120	, name: 'Pathan Colony Uc-05',    region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	121	, name: 'Frontier Colony Uc-06',  region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	122	, name: 'Banaras Colony Uc-07',   region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	123	, name: 'Qasba Colony Uc-08',     region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	124	, name: 'Islamia Colony Uc-09',   region: 'West', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	125	, name: 'Akhtar Colony Uc-01',    region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	126	, name: 'Manzoor Colony Uc-02',   region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	127	, name: 'Azam Basti Uc-03',       region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	128	, name: 'Chanesar Goth Uc-04',    region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	129	, name: 'Mehmoodabad Uc-05',      region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	130	, name: 'Pechs I Uc-6',           region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	131	, name: 'PechsII Uc-07',          region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	132	, name: 'Jut Line Uc-08',         region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	133	, name: 'Central Jacob Lines Uc-09', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	134	, name: 'Jamshed Quarter Uc-10',  region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	135	, name: 'Garden East Uc-11',      region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	136	, name: 'Soldier Bazar Uc-12',    region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	137	, name: 'Pakistan Quarters Uc-13', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	138	, name: 'Delhi Mercentile Society Uc-01', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	139	, name: 'Civic Centre Uc-02',     region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	140	, name: 'P.I.B. Colony Uc-03',    region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	141	, name: 'Essa Nagri Uc-04',        region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	142	, name: 'Gulshan-E-Iqbal I Uc-05', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	143	, name: 'Gillani Railway Station Uc-06', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	144	, name: 'Shanti Nagar Uc-07',     region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	145	, name: 'Jamil Colony Uc-08',     region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	146	, name: 'Gulshan-E-Iqbal II Uc-09', region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	147	, name: 'Pehlwan Goth Uc-10',     region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	148	, name: 'Metrovill Uc-11',        region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	149	, name: 'Gulzar-E-Hijri Uc-12',   region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	150	, name: 'Safoora Goth Uc-13',     region: 'East', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	151	, name: 'Bilal Colony Uc-01',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	152	, name: 'Nasir Colony Uc-02',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	153	, name: 'Chakra Goth Uc-03',      region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	154	, name: 'Mustafa Taj Colony Uc-04', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	155	, name: '100 Quarters Uc-05',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	156	, name: 'Gulzar Colony Uc-06',    region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	157	, name: 'Korangi Sector 33 Uc-07', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	158	, name: 'Zaman Town Uc-08',       region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	159	, name: 'Hasrat Mohani Colony Uc-09', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	160	, name: 'Muzaffarabad Colony Uc-01', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	161	, name: 'Muslimabad Uc-02',       region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	162	, name: 'Daud Colony Uc-03',      region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	163	, name: 'Moinabad Uc-04',         region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	164	, name: 'Shirafi Goth Uc-05',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	165	, name: 'Bhutto Nagar Uc-06',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	166	, name: 'Khawaja Ajmer Nagri Uc-07', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	167	, name: 'Landhi Uc-O8',           region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	168	, name: 'Awami Colony Uc-09',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	169	, name: 'Burmi Colony Uc-10',     region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	170	, name: 'Korangi Uc-11',          region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	171	, name: 'Sherabad Uc-12',         region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	172	, name: 'Natha Khan Goth Uc-01',  region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	173	, name: 'Pak Sadat Colony Uc-02', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	174	, name: 'Drigue Colony Uc-03',    region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	175	, name: 'Reta Plot Uc-04',        region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	176	, name: 'Moria Goth Uc-05',       region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	177	, name: 'Rifah Aam Uc-06',        region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	178	, name: 'DHA Phase 1', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	179	, name: 'DHA Phase 2', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	180	, name: 'DHA Phase 3', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	181	, name: 'DHA Phase 4', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	182	, name: 'DHA Phase 5', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	183	, name: 'DHA Phase 6', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	184	, name: 'DHA Phase 7', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ,{id: 	185	, name: 'DHA Phase 8', region: 'Korangi', city: 'Karachi', state: 'Sindh'}
-  ]						
+const centreAreas = [
+  {id:	1	,region:'DHA',name:'Phase1',city:'Karachi', state:'Sindh'}
+  ,{id:	2	,region:'DHA',name:'Phase2',city:'Karachi', state:'Sindh'}
+  ,{id:	3	,region:'DHA',name:'Phase3',city:'Karachi', state:'Sindh'}
+  ,{id:	4	,region:'DHA',name:'Phase4',city:'Karachi', state:'Sindh'}
+  ,{id:	5	,region:'DHA',name:'Phase5',city:'Karachi', state:'Sindh'}
+  ,{id:	6	,region:'DHA',name:'Phase6',city:'Karachi', state:'Sindh'}
+  ,{id:	7	,region:'DHA',name:'Phase7',city:'Karachi', state:'Sindh'}
+  ,{id:	8	,region:'DHA',name:'Phase8',city:'Karachi', state:'Sindh'}
+  ,{id:	9	,region:'Clifton',name:'Beach Area	',city:'Karachi', state:'Sindh'}
+  ,{id:	10	,region:'Clifton',name:'Gizri	',city:'Karachi', state:'Sindh'}
+  ,{id:	11	,region:'Clifton',name:'Block 1	',city:'Karachi', state:'Sindh'}
+  ,{id:	12	,region:'Clifton',name:'Block 4	',city:'Karachi', state:'Sindh'}
+  ,{id:	13	,region:'Clifton',name:'Block 5	',city:'Karachi', state:'Sindh'}
+  ,{id:	14	,region:'Clifton',name:'Block 6	',city:'Karachi', state:'Sindh'}
+  ,{id:	15	,region:'Clifton',name:'Askari 2	',city:'Karachi', state:'Sindh'}
+  ,{id:	16	,region:'Clifton',name:'Civil Lines',city:'Karachi', state:'Sindh'}
+  ,{id:	17	,region:'Clifton',name:'Karachi Cantonment',city:'Karachi', state:'Sindh'}
+  ,{id:	18	,region:'Clifton',name:'Block 8 Teen Talwar',city:'Karachi', state:'Sindh'}
+  ,{id:	19	,region:'Clifton',name:'Saba Commercial Area',city:'Karachi', state:'Sindh'}
+  ,{id:	20	,region:'Clifton',name:'Kehkashan	',city:'Karachi', state:'Sindh'}
+  ,{id:	21	,region:'Clifton',name:'Darakhshan Commercial Area',city:'Karachi', state:'Sindh'}
+  ,{id:	22	,region:'Clifton',name:'Navy Housing Scheme',city:'Karachi', state:'Sindh'}
+  ,{id:	23	,region:'Clifton',name:'Sultanabad',city:'Karachi', state:'Sindh'}
+  ,{id:	24	,region:'Clifton',name:'Shah Rasool Colony',city:'Karachi', state:'Sindh'}
+  ,{id:	25	,region:'Clifton',name:'Naval Officers Res Estate',city:'Karachi', state:'Sindh'}
+  ,{id:	26	,region:'City Central',name:'Saddar	',city:'Karachi', state:'Sindh'}
+  ,{id:	27	,region:'City Central',name:'Lalazar	',city:'Karachi', state:'Sindh'}
+  ,{id:	28	,region:'City Central',name:'New Chali	',city:'Karachi', state:'Sindh'}
+  ,{id:	29	,region:'City Central',name:'Jutt Lanes	',city:'Karachi', state:'Sindh'}
+  ,{id:	30	,region:'City Central',name:'Jacob Lanes	',city:'Karachi', state:'Sindh'}
+  ,{id:	31	,region:'City Central',name:'Khudad Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	32	,region:'City Central',name:'Burns Road	',city:'Karachi', state:'Sindh'}
+  ,{id:	33	,region:'City Central',name:'City Railway Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	34	,region:'City Central',name:'Garden West	',city:'Karachi', state:'Sindh'}
+  ,{id:	35	,region:'City Central',name:'Garden East	',city:'Karachi', state:'Sindh'}
+  ,{id:	36	,region:'City Central',name:'Parsi Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	37	,region:'City Central',name:'Soldier Bazar	',city:'Karachi', state:'Sindh'}
+  ,{id:	38	,region:'City Central',name:'Light House	',city:'Karachi', state:'Sindh'}
+  ,{id:	39	,region:'Old City/South',name:'Bhorapir	',city:'Karachi', state:'Sindh'}
+  ,{id:	40	,region:'Old City/South',name:'Marwari Lane	',city:'Karachi', state:'Sindh'}
+  ,{id:	41	,region:'Old City/South',name:'Mithadar	',city:'Karachi', state:'Sindh'}
+  ,{id:	42	,region:'Old City/South',name:'Kharadar	',city:'Karachi', state:'Sindh'}
+  ,{id:	43	,region:'Old City/South',name:'Old Haji Camp	',city:'Karachi', state:'Sindh'}
+  ,{id:	44	,region:'Old City/South',name:'Nayabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	45	,region:'Old City/South',name:'Chakiwara	',city:'Karachi', state:'Sindh'}
+  ,{id:	46	,region:'Old City/South',name:'West Wharf	',city:'Karachi', state:'Sindh'}
+  ,{id:	47	,region:'Old City/South',name:'East Wharf	',city:'Karachi', state:'Sindh'}
+  ,{id:	48	,region:'Old City/South',name:'Keamari	',city:'Karachi', state:'Sindh'}
+  ,{id:	49	,region:'Old City/South',name:'Macchar Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	50	,region:'South West',name:'Lyari	',city:'Karachi', state:'Sindh'}
+  ,{id:	51	,region:'South West',name:'Noorani Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	52	,region:'South West',name:'Bihar Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	53	,region:'South West',name:'Naval Flats	',city:'Karachi', state:'Sindh'}
+  ,{id:	54	,region:'South West',name:'Singo Lane	',city:'Karachi', state:'Sindh'}
+  ,{id:	55	,region:'South West',name:'Shershah	',city:'Karachi', state:'Sindh'}
+  ,{id:	56	,region:'South West',name:'Gulbai	',city:'Karachi', state:'Sindh'}
+  ,{id:	57	,region:'South West',name:'Haroonabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	58	,region:'South West',name:'Maripur	',city:'Karachi', state:'Sindh'}
+  ,{id:	59	,region:'South West',name:'Pak colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	60	,region:'South West',name:'Golimar	',city:'Karachi', state:'Sindh'}
+  ,{id:	61	,region:'South West',name:'Masroor	',city:'Karachi', state:'Sindh'}
+  ,{id:	62	,region:'South West',name:'Budhni Goth	',city:'Karachi', state:'Sindh'}
+  ,{id:	63	,region:'South West',name:'SITE	',city:'Karachi', state:'Sindh'}
+  ,{id:	64	,region:'South West',name:'Labor Square	',city:'Karachi', state:'Sindh'}
+  ,{id:	65	,region:'South West',name:'Labor Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	66	,region:'South West',name:'Keamari	',city:'Karachi', state:'Sindh'}
+  ,{id:	67	,region:'South West',name:'EOBI Housing Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	68	,region:'South West',name:'KDA Scheme 42	',city:'Karachi', state:'Sindh'}
+  ,{id:	69	,region:'South West',name:'Goth Haji Usman	',city:'Karachi', state:'Sindh'}
+  ,{id:	70	,region:'South West',name:'Mohterma Benazir Bhutto Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	71	,region:'Orangi',name:'Baldia	',city:'Karachi', state:'Sindh'}
+  ,{id:	72	,region:'Orangi',name:'Chishti Nagar	',city:'Karachi', state:'Sindh'}
+  ,{id:	73	,region:'Orangi',name:'Sadiqabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	74	,region:'Orangi',name:'Mominabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	75	,region:'Orangi',name:'Farooq-e-Azam Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	76	,region:'Orangi',name:'Ghaziabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	77	,region:'Orangi',name:'Gulshan E Tauheed	',city:'Karachi', state:'Sindh'}
+  ,{id:	78	,region:'Orangi',name:'Gulshan E Haseen	',city:'Karachi', state:'Sindh'}
+  ,{id:	79	,region:'Orangi',name:'Gulshan E Raheem	',city:'Karachi', state:'Sindh'}
+  ,{id:	80	,region:'Orangi',name:'Hazratabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	81	,region:'Orangi',name:'Gul Mohammad Qalandrani Goth	',city:'Karachi', state:'Sindh'}
+  ,{id:	82	,region:'Orangi',name:'Samama City	',city:'Karachi', state:'Sindh'}
+  ,{id:	83	,region:'Orangi',name:'Areesha City	',city:'Karachi', state:'Sindh'}
+  ,{id:	84	,region:'Orangi',name:'Baloch Goth	',city:'Karachi', state:'Sindh'}
+  ,{id:	85	,region:'Orangi',name:'Banaras Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	86	,region:'Orangi',name:'Orangi Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	87	,region:'Central',name:'Nazimabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	88	,region:'Central',name:'North Nazimabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	89	,region:'Central',name:'F B Area	',city:'Karachi', state:'Sindh'}
+  ,{id:	90	,region:'Central',name:'Essa Nagri	',city:'Karachi', state:'Sindh'}
+  ,{id:	91	,region:'Central',name:'Liaquetabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	92	,region:'Central',name:'Nafeesabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	93	,region:'Central',name:'Qasba Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	94	,region:'Central',name:'Gulberg Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	95	,region:'Central',name:'Buffer Zone	',city:'Karachi', state:'Sindh'}
+  ,{id:	96	,region:'Central',name:'Memon Nagar	',city:'Karachi', state:'Sindh'}
+  ,{id:	97	,region:'Central',name:'Old Golimar	',city:'Karachi', state:'Sindh'}
+  ,{id:	98	,region:'Central',name:'Hussainabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	99	,region:'North',name:'North Karachi	',city:'Karachi', state:'Sindh'}
+  ,{id:	100	,region:'North',name:'New Karachi	',city:'Karachi', state:'Sindh'}
+  ,{id:	101	,region:'North',name:'Surjani Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	102	,region:'North',name:'Gulistan E Hameed	',city:'Karachi', state:'Sindh'}
+  ,{id:	103	,region:'Gulshan',name:'Civic Centre	',city:'Karachi', state:'Sindh'}
+  ,{id:	104	,region:'Gulshan',name:'Gulshan E Iqbal	',city:'Karachi', state:'Sindh'}
+  ,{id:	105	,region:'Gulshan',name:'KDA Officers Club	',city:'Karachi', state:'Sindh'}
+  ,{id:	106	,region:'Gulshan',name:'Nipa Chorangi	',city:'Karachi', state:'Sindh'}
+  ,{id:	107	,region:'Gulshan',name:'Gulastan E Johar	',city:'Karachi', state:'Sindh'}
+  ,{id:	108	,region:'Gulshan',name:'Karachi University	',city:'Karachi', state:'Sindh'}
+  ,{id:	109	,region:'Gulshan',name:'Mehran Banglows Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	110	,region:'Gulshan',name:'Gulshan E Hijri	',city:'Karachi', state:'Sindh'}
+  ,{id:	111	,region:'Gulshan',name:'Gulshan E Kaneez Fatima	',city:'Karachi', state:'Sindh'}
+  ,{id:	112	,region:'Gulshan',name:'PCSIR Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	113	,region:'Gulshan',name:'Azeemabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	114	,region:'Gulshan',name:'New Sabzi Mandi	',city:'Karachi', state:'Sindh'}
+  ,{id:	115	,region:'Gulshan',name:'PAF Housing	',city:'Karachi', state:'Sindh'}
+  ,{id:	116	,region:'Gulshan',name:'Gulshan E Umair	',city:'Karachi', state:'Sindh'}
+  ,{id:	117	,region:'Gulshan',name:'Gulshan E Jamal	',city:'Karachi', state:'Sindh'}
+  ,{id:	118	,region:'Gulshan',name:'Gulbahar	',city:'Karachi', state:'Sindh'}
+  ,{id:	119	,region:'Airport',name:'PNS Juahar	',city:'Karachi', state:'Sindh'}
+  ,{id:	120	,region:'Airport',name:'New Naval Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	121	,region:'Airport',name:'Bangladesh Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	122	,region:'Airport',name:'Askari IV	',city:'Karachi', state:'Sindh'}
+  ,{id:	123	,region:'Airport',name:'CAA Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	124	,region:'Airport',name:'Faisal Cantonment	',city:'Karachi', state:'Sindh'}
+  ,{id:	125	,region:'Airport',name:'Airport	',city:'Karachi', state:'Sindh'}
+  ,{id:	126	,region:'Airport',name:'Tariq Bin Ziyad Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	127	,region:'Society',name:'PECHS	',city:'Karachi', state:'Sindh'}
+  ,{id:	128	,region:'Society',name:'SMCHS	',city:'Karachi', state:'Sindh'}
+  ,{id:	129	,region:'Society',name:'Tariq Road	',city:'Karachi', state:'Sindh'}
+  ,{id:	130	,region:'Society',name:'Bahadurabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	131	,region:'Society',name:'Dhoraji	',city:'Karachi', state:'Sindh'}
+  ,{id:	132	,region:'Society',name:'Karsaz	',city:'Karachi', state:'Sindh'}
+  ,{id:	133	,region:'Society',name:'CP & Barar Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	134	,region:'Society',name:'KDA Scheme # 1	',city:'Karachi', state:'Sindh'}
+  ,{id:	135	,region:'Society',name:'KDA Scheme # 1 Extension	',city:'Karachi', state:'Sindh'}
+  ,{id:	136	,region:'Society',name:'Overseas Housing Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	137	,region:'Society',name:'Rohail Khalid Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	138	,region:'Society',name:'Hill Park	',city:'Karachi', state:'Sindh'}
+  ,{id:	139	,region:'Society',name:'Karachi Memon Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	140	,region:'Society',name:'Banglore Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	141	,region:'Society',name:'Alhamra Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	142	,region:'Society',name:'Kokan CHS	',city:'Karachi', state:'Sindh'}
+  ,{id:	143	,region:'Society',name:'Dawood CHS	',city:'Karachi', state:'Sindh'}
+  ,{id:	144	,region:'Society',name:'Maniya Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	145	,region:'Society',name:'Modern Society	',city:'Karachi', state:'Sindh'}
+  ,{id:	146	,region:'Society',name:'New Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	147	,region:'Society',name:'Al Hilal CHS	',city:'Karachi', state:'Sindh'}
+  ,{id:	148	,region:'Society',name:'Nursery	',city:'Karachi', state:'Sindh'}
+  ,{id:	149	,region:'Korangi',name:'Shah Faisal Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	150	,region:'Korangi',name:'Mehmoodabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	151	,region:'Korangi',name:'Azam Basti	',city:'Karachi', state:'Sindh'}
+  ,{id:	152	,region:'Korangi',name:'Dadabhoy Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	153	,region:'Korangi',name:'Shah Faisal Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	154	,region:'Korangi',name:'Landhi Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	155	,region:'Korangi',name:'Landhi Industrial Area	',city:'Karachi', state:'Sindh'}
+  ,{id:	156	,region:'Korangi',name:'Quaidabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	157	,region:'Korangi',name:'Ibrahim Hydri	',city:'Karachi', state:'Sindh'}
+  ,{id:	158	,region:'Korangi',name:'Shah Latif Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	159	,region:'Korangi',name:'Badar Town	',city:'Karachi', state:'Sindh'}
+  ,{id:	160	,region:'Korangi',name:'Abdullah Goth	',city:'Karachi', state:'Sindh'}
+  ,{id:	161	,region:'Korangi',name:'Qasimabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	162	,region:'Korangi',name:'Gulshan E Hadeed	',city:'Karachi', state:'Sindh'}
+  ,{id:	163	,region:'Korangi',name:'Dhabeji	',city:'Karachi', state:'Sindh'}
+  ,{id:	164	,region:'Malir',name:'Modal Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	165	,region:'Malir',name:'Malir Cantonment	',city:'Karachi', state:'Sindh'}
+  ,{id:	166	,region:'Malir',name:'Kachi Colony	',city:'Karachi', state:'Sindh'}
+  ,{id:	167	,region:'Malir',name:'Moinabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	168	,region:'Malir',name:'Gilanabad	',city:'Karachi', state:'Sindh'}
+  ,{id:	169	,region:'Malir',name:'Hashim Jokhio	',city:'Karachi', state:'Sindh'}
+  ,{id:	170	,region:'Malir',name:'Abbottabad Lines	',city:'Karachi', state:'Sindh'}
+  ,{id:	171	,region:'Malir',name:'Al Harmain Complex	',city:'Karachi', state:'Sindh'}
+  ,{id:	172	,region:'Malir',name:'Gulshan E Elahi	',city:'Karachi', state:'Sindh'}
+  ,{id:	173	,region:'Malir',name:'Noman Lake Villas	',city:'Karachi', state:'Sindh'}
+  ,{id:	174	,region:'Malir',name:'Mehrab Keshkaily Goth	',city:'Karachi', state:'Sindh'}
+  ,{id:	175	,region:'Malir',name:'Fine City	',city:'Karachi', state:'Sindh'}
+  ,{id:	176	,region:'Malir',name:'Sherwani Royal City	',city:'Karachi', state:'Sindh'}
+  ,{id:	177	,region:'Malir',name:'Gadap	',city:'Karachi', state:'Sindh'}
+  ,{id:	178	,region:'Malir',name:'Usman Takri Goth	',city:'Karachi', state:'Sindh'}
+]						
               
-    
-// const centreAreas = [
-//   1{id: 142, name: 'Gulshan-e-Iqbal', iconURL: '', romanUrdu:''}
-// , 2{id: 85, name: 'Clifton', iconURL: '', romanUrdu:''}
-// , 3{id: 178, name: 'Defence Housing Authority Phose I' , iconURL: '', romanUrdu:''}
-// , 4{id: 179, name: 'Defence Housing Authority Phose II', iconURL: '', romanUrdu:''}
-// , 5{id: 180, name: 'Defence Housing Authority Phose III', iconURL: '', romanUrdu:''}
-// , 6{id: 181, name: 'Defence Housing Authority Phose IV', iconURL: '', romanUrdu:''}
-// , 7{id: 182, name: 'Defence Housing Authority Phose V' , iconURL: '', romanUrdu:''}
-// , 8{id: 149, name: 'Gulzar E Hijri Scheme 33'      , iconURL: '', romanUrdu:''}
-// , 9{id: 83, name: 'Saddar', iconURL: '', romanUrdu:''}
-// , 10{id: 148, name: 'Metrovil Colony', iconURL: '', romanUrdu:''}
-// , 11{id: 71, name: 'Bahar Colony', iconURL: '', romanUrdu:''}
-// , 12{id: 24, name: 'Hussainabad', iconURL: '', romanUrdu:''}
-// ];
-
 const patients = [
   {id:1, firstName:'Muhammed Naeem', surname:'Siddiqi', dateOfBirth: '1990-12-15', gender: 'M', nextToKin:'Tahira Siddiqi', kinRelationship: 'Spouse', medicalProblems:'', areaId:1} 
   ,{id:2, firstName:'Fatima', surname:'Khan',     dateOfBirth: '1995-05-29', gender: 'F', nextToKin:'Hameed Khan', kinRelationship: 'Father', medicalProblems:'', areaId:1} 
@@ -444,8 +426,6 @@ const newAppointment = {
 
 const newCentre = {id:0, name: '', typeId: 0, areaId: 0, locationId: 0};
 
-
-
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   newCourse,
@@ -454,6 +434,7 @@ module.exports = {
   newPatient,
   newEvent,
   newDoctor,
+  newLocation,
   courses,
   authors,
   doctors,

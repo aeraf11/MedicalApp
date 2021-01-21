@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import SelectInput from "../common/SelectInput";
 
-const CentreList = ({ centres, centreTypes, centreAreas, onTypeFiltered, onAreaFiltered
+const CentreList = ({ centres, centreTypes, centreAreas, regions, onTypeFiltered, onAreaFiltered, onRegionFiltered
 //    , onDeleteClick 
 }) => (
   <table className="table">
@@ -27,23 +27,33 @@ const CentreList = ({ centres, centreTypes, centreAreas, onTypeFiltered, onAreaF
         </th>
         <th>
         <SelectInput
+        name="regionId"
+        label=""
+        defaultOption="All Selected"
+        options={regions
+          .map(reg=> ({
+          value: reg,
+          text: reg
+        }))}
+        onChange={onRegionFiltered}
+      /></th><th>
+      <SelectInput
         name="centreAreaId"
         label=""
-        //value={areaId || ""}
         defaultOption="All Selected"
         options={centreAreas.map(a => ({
           value: a.id,
           text: a.name
         }))}
         onChange={onAreaFiltered}
-        //error={errors.author}
       />
-        </th>
+      </th>
         <th />
       </tr>
       <tr>
         <th>Medical Centre Name</th>
         <th>Category</th>
+        <th>Region</th>
         <th>Area</th>
         <th />
       </tr>
@@ -56,6 +66,7 @@ const CentreList = ({ centres, centreTypes, centreAreas, onTypeFiltered, onAreaF
               <Link to={"/centre/" + centre.id}>{centre.name}</Link>
             </td>
             <td>{centre.centreTypeName}</td>
+            <td>{centre.centreRegionName}</td>
             <td>{centre.centreAreaName}</td>
             <td>
               <Link to={"/centreedit/" + centre.id}>Edit</Link>
@@ -71,8 +82,10 @@ CentreList.propTypes = {
   centres: PropTypes.array.isRequired
   ,centreTypes: PropTypes.array.isRequired
   ,centreAreas: PropTypes.array.isRequired
+  ,regions: PropTypes.array.isRequired
   ,onTypeFiltered: PropTypes.func.isRequired
   ,onAreaFiltered: PropTypes.func.isRequired
+  ,onRegionFiltered: PropTypes.func.isRequired
 };
 
 export default CentreList;

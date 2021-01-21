@@ -85,8 +85,8 @@ function mapStateToProps(state) {
               authorName: state.authors.find(a => a.id === course.authorId).name
             };
           }),
-    authors: state.authors,
-    loading: state.apiCallsInProgress > 0
+    authors: state.authors
+    ,loading: state.apiCallsInProgress > 0
   };
 }
 
